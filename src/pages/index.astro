@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CryptoSearch from '../components/CryptoSearch';
+---
+
+<Layout title="CryptoSearch - Find Cryptocurrency Information">
+	<section class="text-center mb-8">
+		<h2 class="text-4xl font-bold mb-4">Cryptocurrency Search</h2>
+		<p class="text-xl text-gray-600 max-w-2xl mx-auto">
+			Search for any cryptocurrency by name or symbol to get the latest information.
+		</p>
+	</section>
+
+	<CryptoSearch client:load />
+
+	<section class="mt-16 p-6 bg-white rounded-lg shadow-md max-w-4xl mx-auto">
+		<h2 class="text-2xl font-bold mb-4">About CryptoSearch</h2>
+		<p class="mb-4">
+			CryptoSearch provides real-time information about cryptocurrencies using data from the CoinGecko API.
+			Search for any cryptocurrency to see details including market rank, price, and more.
+		</p>
+		<p>
+			This application is built with Astro, React, and Tailwind CSS, demonstrating how to create
+			a modern, responsive web application for cryptocurrency data.
+		</p>
+	</section>
+</Layout>
+

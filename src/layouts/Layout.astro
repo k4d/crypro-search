@@ -1,0 +1,57 @@
+---
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { 
+	title, 
+	description = "Search and discover cryptocurrencies with real-time data from CoinGecko" 
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="bg-gray-100 min-h-screen">
+		<header class="bg-blue-700 text-white py-4 mb-6">
+			<div class="container mx-auto px-4">
+				<h1 class="text-3xl font-bold">CryptoSearch</h1>
+				<p class="text-blue-100">Find information about any cryptocurrency</p>
+			</div>
+		</header>
+		
+		<main class="container mx-auto px-4 py-6">
+			<slot />
+		</main>
+		
+		<footer class="mt-12 py-6 bg-gray-800 text-gray-300">
+			<div class="container mx-auto px-4 text-center">
+				<p>Data provided by <a href="https://www.coingecko.com/" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">CoinGecko</a></p>
+				<p class="mt-2 text-sm">© {new Date().getFullYear()} CryptoSearch. All rights reserved.</p>
+			</div>
+		</footer>
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--accent: 136, 58, 234;
+		--accent-light: 224, 204, 250;
+		--accent-dark: 49, 10, 101;
+		--accent-gradient: linear-gradient(
+			45deg,
+			rgb(var(--accent)),
+			rgb(var(--accent-light)) 30%,
+			white 60%
+		);
+	}
+</style>
+
